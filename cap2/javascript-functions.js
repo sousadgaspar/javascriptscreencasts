@@ -1,0 +1,2 @@
+prompt("Write something here: ");
+

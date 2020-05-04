@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Click this document to activate the handler.</p>
+
+  <button>Click me</button>
+  <p>No handler here</p>
+
+  <script>
+
+    // In this example click is the kind of event and the function is the action to be performed when the event happens.
+    // window.addEventListener("click", () => { 
+    //   console.log("You knocked?");
+    // });
+
+    let button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+      console.log("button clicked!");
+    });
+  </script>
+</body>
+</html>
