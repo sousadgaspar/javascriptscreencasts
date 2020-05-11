@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        let box = document.querySelector("canvas").getContext("2d");
+        box.beginPath();
+        box.moveTo(10, 90);
+        box.quadraticCurveTo(60, 10, 90, 90);
+        box.lineTo(60, 10);
+        box.closePath();
+        box.stroke();
+    </script>
+</body>
+</html>
