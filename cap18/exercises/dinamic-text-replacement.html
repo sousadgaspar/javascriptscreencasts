@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <script>
+        let textArea = document.querySelector("textarea");
+        textArea.addEventListener("keydown", event => {
+            if(event.keyCode == 113) {
+                replaceSelection (textArea, "Khasekhemwy");
+            }
+
+            function replaceSelection (element, word) {
+                let from = element.selectionStart;
+                let to = element.selectionEnd;
+                element.value = element.value.slice(0, from) + word + element.value.slice(to);
+
+                element.selectionStart = to + word.length;
+                element.selectionEnd = to + word.length;
+                
+            }
+        });
+    </script>
+</body>
+</html>
