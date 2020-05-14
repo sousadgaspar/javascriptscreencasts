@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="200" height="200"></canvas>
+
+    <script>
+
+        const results = [
+            {name: "Satisfied", count: 1043, color: "lightblue"},
+            {name: "Neutral", count: 563, color: "lightgreen"},
+            {name: "Unsatisfied", count: 510, color: "pink"},
+            {name: "No comment", count: 175, color: "silver"}
+        ];
+
+        let box = document.querySelector("canvas").getContext("2d");
+        let total = results
+            .reduce((sum, {count}) => sum + count, 0);
+
+        //start at the top
+        let currentAngle = -0.5 * Math.PI;
+        for (let result of results) {
+            let sliceAngle = (result.count / total) * 2 * Math.PI;
+            box.beginPath();
+            box.arc(100, 100, 100, currentAngle, currentAngle + sliceAngle);
+            currentAngle += sliceAngle;
+            box.lineTo(100, 100);
+            box.fillStyle = result.color;
+            box.fill();
+        }
+
+        box.font = "28px Georgia";
+        box.fillStyle = "fuchsia";
+        box.fillText("I can draw text, too!", 10, 50);
+
+    </script>
+</body>
+</html>
+
