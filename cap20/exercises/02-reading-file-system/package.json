@@ -1,0 +1,19 @@
+{
+  "name": "file-system-reader",
+  "version": "1.0.0",
+  "description": "This is the best file system reader I've seem in my life",
+  "main": "index.js",
+  "scripts": {
+    "test": "tc"
+  },
+  "keywords": [
+    "file",
+    "system",
+    "io"
+  ],
+  "author": "Sousa Gaspar",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
